@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <script type="text/javascript" src="fancy-settings/source/lib/store.js"></script>
+    <script type="text/javascript">
+      var defaultSettings = {
+        "username": "",
+        "hidden": false
+      };
+
+      var settings = new Store("settings", defaultSettings);
+
+      chrome.extension.onRequest.addListener(function(req, sender, respond) {
+        if (req.action == 'getOpts') {
+          respond(settings.toObject());
+        }
+      });
+    </script>
+  </head>
+</html>

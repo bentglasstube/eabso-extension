@@ -1,21 +1,8 @@
 <!doctype html>
 <html>
   <head>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready( function() {
-        chrome.tabs.getSelected(null, function(tab) {
-          $.post('http://eab.so/new.pl', { uri: tab.url }, function(data) {
-            if (data.error) {
-              $('p').addClass('error');
-              $('p').text(data.error);
-            } else {
-              $('p').text(data.result);
-            }
-          });
-        });
-      });
-    </script>
+    <script type="text/javascript" src="jquery-1.6.min.js"></script>
+    <script type="text/javascript" src="popup.js"></script>
     <style type="text/css">
       body {
         text-align: center;
@@ -27,7 +14,7 @@
     </style>
   </head>
   <body>
-    <p><img src="spinner.gif" /></p>
+    <p><img src="spinner.gif"></p>
   </body>
 </html>
 
