@@ -24,8 +24,7 @@
           var uri = info.linkUrl ? info.linkUrl : info.srcUrl;
           $.post('http://eab.so/new.pl', { 
             "uri": uri,
-            "user": settings.username,
-            "hide": false
+            "user": settings.toObject().username
           });
         },
       });

@@ -1,6 +1,6 @@
 this.manifest = {
   "name": "eab.so shortener",
-  "icon": "../../icon.png",
+  "icon": "../../icon48.png",
   "settings": [
     {
       "tab": "Main",
