@@ -7,7 +7,7 @@ $(document).ready( function() {
         "hide": settings.hidden
       };
 
-      $.post('http://eab.so/new.pl', data, function(response) {
+      $.post('http://eab.so/', data, function(response) {
         if (response.error) {
           $('p').addClass('error');
           $('p').text(response.error);
