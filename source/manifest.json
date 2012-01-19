@@ -1,7 +1,7 @@
 {
   "name": "eab.so shortener",
   "icons": { "16": "icon16.png", "48": "icon48.png", "128": "icon128.png" },
-  "version": "3.0",
+  "version": "3.0.1",
   "description": "url shortener using eab.so",
   "options_page": "fancy-settings/source/index.html",
   "background_page": "background.html",
