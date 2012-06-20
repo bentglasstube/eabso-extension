@@ -10,13 +10,14 @@ this.manifest = {
       "label": "Post as",
       "text": "Some asshole"
     },
-    { 
+    {
       "tab": "Main",
       "group": "",
-      "name": "hidden",
-      "type": "checkbox",
-      "label": "Hide links from RSS feed"
-    } 
+      "name": "keybind",
+      "type": "text",
+      "label": "Shortcut key",
+      "text": "^S",
+    }
   ]
 };
 

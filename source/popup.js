@@ -7,14 +7,18 @@ $(document).ready( function() {
         "hide": settings.hidden
       };
 
-      $.post('http://eab.so/', data, function(response) {
+      chrome.extension.sendRequest({
+        action: 'shorten',
+        uri:    tab.url,
+        user:   settings.username,
+      }, function(response) {
         if (response.error) {
           $('p').addClass('error');
           $('p').text(response.error);
         } else {
           $('p').text(response.result);
         }
-      }); 
+      });
     });
   });
 });

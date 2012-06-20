@@ -4,8 +4,8 @@
     <script type="text/javascript" src="fancy-settings/source/lib/store.js"></script>
     <script type="text/javascript">
       var defaultSettings = {
-        "username": "",
-        "hidden": false
+        "username":     "",
+        "keybind":      "^S",
       };
 
       var settings = new Store("settings", defaultSettings);
@@ -13,6 +13,8 @@
       chrome.extension.onRequest.addListener(function(req, sender, respond) {
         if (req.action == 'getOpts') {
           respond(settings.toObject());
+        } else if (req.action == 'shorten') {
+          $.post('http://eab.so/', req, function(response) { respond(response) });
         }
       });
       
