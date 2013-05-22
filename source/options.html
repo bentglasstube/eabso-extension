@@ -2,30 +2,20 @@
 <html>
   <head>
     <title>eab.so shortener settings</title>
-    <script type="text/javascript">
-      function save_setting(name, value) {
-        window.localStorage[name] = value;
-      }
-
-      function load_settings() {
-
-        value = window.localStorage.user;
-        if (!value) value = 'some asshole';
-        document.getElementById('user').value = value;
-      }
-    </script>
     <style type="text/css">
       dt { float: left; clear: right; font-weight: bold; width: 10em; }
     </style>
   </head>
-  <body onload="load_user()">
+  <body>
     <form>
       <dl>
         <dt>Name:</dt>
-        <dd><input id="user" onkeyup="save_user(this.value)" /></dd>
-        <dt>One-click posting:</dt>
-        <dd><input id="oneclick" 
+        <dd><input type="text" id="username" placeholder="Some asshole"></dd>
+        <dt>Shortcut:</dt>
+        <dd><input type="text" id="shortcut" placeholder="Click to set"></dd>
       </dl>
     </form>
+    <script type="text/javascript" src="jquery-1.6.min.js"></script>
+    <script type="text/javascript" src="options.js"></script>
   </body>
 </html>

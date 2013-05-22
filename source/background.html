@@ -1,35 +1,6 @@
 <html>
   <head>
     <script type="text/javascript" src="jquery-1.6.min.js"></script>
-    <script type="text/javascript" src="fancy-settings/source/lib/store.js"></script>
-    <script type="text/javascript">
-      var defaultSettings = {
-        "username":     "",
-        "keybind":      "^S",
-      };
-
-      var settings = new Store("settings", defaultSettings);
-
-      chrome.extension.onRequest.addListener(function(req, sender, respond) {
-        if (req.action == 'getOpts') {
-          respond(settings.toObject());
-        } else if (req.action == 'shorten') {
-          $.post('http://eab.so/', req, function(response) { respond(response) });
-        }
-      });
-      
-      chrome.contextMenus.create({
-        "type": "normal",
-        "title": "Share with #eatabrick",
-        "contexts": ["link", "image"],
-        "onclick": function(info, tab) {
-          var uri = info.linkUrl ? info.linkUrl : info.srcUrl;
-          $.post('http://eab.so/', { 
-            "uri": uri,
-            "user": settings.toObject().username
-          });
-        },
-      });
-    </script>
+    <script type="text/javascript" src="background.js"></script>
   </head>
 </html>

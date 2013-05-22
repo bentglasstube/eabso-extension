@@ -1,5 +1,5 @@
 $(document).ready( function() {
-  chrome.extension.sendRequest({action: 'getOpts'}, function(settings) {
+  chrome.extension.sendMessage({action: 'getOpts'}, function(settings) {
     chrome.tabs.getSelected(null, function(tab) {
       var data = {
         "uri": tab.url,
@@ -7,10 +7,9 @@ $(document).ready( function() {
         "hide": settings.hidden
       };
 
-      chrome.extension.sendRequest({
+      chrome.extension.sendMessage({
         action: 'shorten',
         uri:    tab.url,
-        user:   settings.username,
       }, function(response) {
         if (response.error) {
           $('p').addClass('error');
