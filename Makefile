@@ -1,3 +1,12 @@
-all:
-	rm -f eabso-extension.zip
-	zip -r eabso-extension.zip source
+SOURCES=$(wildcard source/*)
+ZIPFILE=eabso-extension.zip
+
+all: $(ZIPFILE)
+
+$(ZIPFILE): $(SOURCES)
+	zip -f $@ $(SOURCES)
+
+clean:
+	rm -f $(ZIPFILE)
+
+.PHONY: all clean
