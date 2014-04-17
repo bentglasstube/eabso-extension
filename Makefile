@@ -4,7 +4,7 @@ ZIPFILE=eabso-extension.zip
 all: $(ZIPFILE)
 
 $(ZIPFILE): $(SOURCES)
-	zip -f $@ $(SOURCES)
+	zip -u $@ $(SOURCES)
 
 clean:
 	rm -f $(ZIPFILE)
